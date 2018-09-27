@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Piotr Wasilewski - GitHub</title>
+
+         <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		  <a class="navbar-brand" href="index.html">Piotr Wasilewski</a>
+		
+		<div class="collapse navbar-collapse" id="navbarColor01">  
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item">
+				<a class="nav-link active" href="index.html">Główna</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="resume.html">Résumé</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="project.html">Projekt</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="index.html#contact">Kontakt</a>
+			  </li>
+			</ul>
+						<ul class="navbar-nav ml-auto">
+			  <li class="nav-item">
+				<a class="nav-link" href="index.html">PL</a>
+			  </li>
+			   <li class="nav-item">
+				<a class="nav-link" href="../en/project.html">EN</a>
+			  </li>
+			</ul>
+		</div>
+		</nav>
+        <div class = "row frst justify-content-center">    
+			<div class ="col-md-2"></div>
+			<div class ="col-md-8">
+				<h2 style="margin-bottom:1rem">Do rzeczy</h2>
+				<div class="row" style="margin-left:0">
+				<div class="col-md-8" style="text-align: justify; margin-bottom:2rem;padding-left:0;">
+				<p>Heja!
+				<p>GitHub Pages mają za zadanie przedstawić moje 'weekendowe projekty', które uważałem za przyjemne i/lub interesujące.
+				Tworzenie wstępnego projektu traktuję jak rozwiązywanie zagadek i to na tą część poświęcam najwięcej czasu. Dopracowane szczegóły uważam za znacznie mniej wartościowe niż ogólny pomysł i zarys,
+				dlatego też swoje projekty uznaję za skończone i funkcjonalne, aczkolwiek w żadnym wypadku nie idealne.</p>
+				<p>Ogólnie, lubię tworzyć w dużej mierze samodzielnie, aby rzeczywiście zrozumieć problem i narzędzia których używam. Z tego względu staram się omijać API, minimalizować liczbę zależności itp.
+				Ta strona na przykład będzie dość surowa, jako że nigdy wcześniej nie używałem HTML + CSS, nie wspominając o JS. Mimo że nie perfekcyjne, owoce swojej pracy znam na wylot :)</p>
+				<p>Kolejna sprawa, wszystko co tutaj widzisz zostało stworzone wyłącznie przeze mnie, o ile nie jest powiedziane inaczej.
+				Dlatego też, chciałbym oddać uznanie <a href="https://bootswatch.com/lux/">bootswatch.com/lux/</a> będącego źródłem CSS na podstawie którego zacząłem tworzyć tę stronę oraz 
+				<a href="https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server">github.com/dwyl/</a> który dał mi wgląd w tworzenie formularza kontaktowego bez istniejącego serwera.</p>
+				<p>Dobra, wystarczy, baw się dobrze!</p></div>
+				<div class="col-md-4" >
+				<img style="width:100%;" src="../value.png"/>
+				<p style="text-align: center">Moje 2-minutowe dzieło!</p></div></div>
+				<h2 id = "contact" style="margin-bottom:1rem">Kontakt</h2>
+				<div class="contactbg">
+				 <form class="gform" method="POST" style="width:50%" action="https://script.google.com/macros/s/AKfycbx1_JavIuUpSBxEwBEGW1yIhB3XBadF2jLVnjuQr6EemiTXxzjy/exec">
+
+				 <div class="form-elements card" style="display:block;padding:1rem;">
+					<fieldset class="form-group">
+					  <label for="InputEmail">Adres email:</label>
+					  <input type="email" class="form-control" name="InputEmail" id="InputEmail" aria-describedby="emailHelp" value="" required placeholder="Wpisz swój adres email!"/>
+					  <span class="email-invalid" style="display:none">Adres email jest niepoprawny...</span>
+					  <small id="emailHelp" class="form-text text-muted">Twój email nie zostanie nikomu rozpowszechniony.</small>
+					</fieldset>
+					<fieldset class="form-group">
+					  <label for="EmailTopic">Temat:</label>
+					  <input type="topic" class="form-control" name="EmailTopic" id="EmailTopic" placeholder="Wpisz temat!" />
+					</fieldset>
+					 <fieldset class="form-group">
+					  <label for="Textarea">Wiadomość:</label>
+					  <textarea class="form-control" name="Textarea" id="Textarea" rows="3"></textarea>
+					</fieldset>
+					 <button type="submit" class="btn btn-primary" style="display:inline-block">Submit</button>
+					 <div class="thankyou_message" style="display:none;padding-left:1rem;">
+					  <h6>Dzięki za wiadomość!</h6>
+					</div>
+				 </div>
+					
+				 </form></div>
+				 <p style="margin-bottom:1rem;text-align:right">Zdjęcie autorstwa <a href="https://web.facebook.com/FASDeptula/photos/a.253395068191093/481715928692338/?type=3&theater">Sebastiana Deptuły</a>
+			</div>
+			<div class ="col-md-2"></div>
+		</div>
+		<!-- form JS -->
+		<script data-cfasync="false" type="text/javascript" src="../form-submission-handler.js"></script>
+        <!-- jQuery CDN -->
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
