@@ -11,6 +11,15 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="../style.css">
+		
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+		  (adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-2099496971035501",
+			enable_page_level_ads: true
+		  });
+		</script>
+
     </head>
     <body>
 		
@@ -44,38 +53,72 @@
 		</nav>
         <div class = "row frst justify-content-center">    
 			<div class ="col-md-2"></div>
-			<div class ="col-md-8">
+			<div class ="col-md-8" style="text-align: justify;">
 				<h2 style="margin-bottom:1rem">Projekt "Assemble"</h2>
-				<p>TLDR: Projekt "Assemble" przedstawia wartości samochodów będących w sprzedaży na rynku polskim. Szczegółowy opis możesz znaleźć <a href="#desc"><i>poniżej.</i></a></p>
+				<p>TLDR: Projekt "Assemble" polegał na uzyskaniu danych poprzez webscraping i ich wizualizacji. Zebrane informacje dotyczą samochodów będących w sprzedaży na rynku polskim i obejmują 517 modeli samochodów występujących w 899 wersjach.
+				Odświeżanie analizy planuję wykonywać raz w miesiącu.</p>
+				<p>Odrobinę bardziej szczegółowy opis projektu możesz znaleźć <a href="#desc"><i>poniżej.</i></a></p>
+				
+				<div class="alert alert-dismissible alert-warning" style="margin-bottom:1rem;">
+				  <button type="button" class="close" data-dismiss="alert">&times;</button>
+				  <h4 class="alert-heading">Uwaga!</h4>
+				  <p class="mb-0">Dashboard odświeża się dopiero po wybraniu zarówno Marki jak i Modelu samochodu.</p>
+				</div>
+				
 				<div style="position:relative;padding-top:50%;">
 				<iframe frameborder="0" marginheight="0" marginwidth="0" title="data visualization" allowtransparency="true" allowfullscreen="false" class="tableauViz" style="display: block; position:absolute;top:0;left:0;width:100%;height:100%; margin: 0px; padding: 0px; border: none;" name="fitvid0" scrolling = "no" src="https://public.tableau.com/views/Assemble/Dashboard1?:embed=y&amp;:showVizHome=no&amp;:host_url=https%3A%2F%2Fpublic.tableau.com%2F&amp;:embed_code_version=3&amp;:tabs=no&amp;:toolbar=no&amp;:animate_transition=yes&amp;:display_static_image=no&amp;:display_spinner=no&amp;:display_overlay=yes&amp;:display_count=yes&amp;publish=yes&amp;:showShareOptions=false&amp;:loadOrderID=0"></iframe>
 				</div>
 				<p style="margin-bottom:1rem;text-align:right">Aktualizacja danych: 21.09.2018</p>
-				<hr style="margin-bottom:1rem">
-				<h2 id = "desc" style="margin-bottom:1rem">Opis projektu</h2>
+				<hr style="margin-bottom:3rem">
+				<h2 id = "desc">Opis projektu</h2>
 				<div>
-					<h5>Zawartość</h5>
+					<h5 style="margin-top:1rem">Zawartość</h5>
 					<ol>
 						<li>Tło projektu</li>
 						<li>Jak czytać wykres?</li>
 						<li>Użyte narzędzia</li>
 						<li>Feedback i kontakt</li>
 					</ol>
-					<h5>1. Tło projektu</h5>
-					<h5>2. Jak czytać wykres?</h5>
-					<h5>3. Użyte narzędzia</h5>
+					<h5 style="margin-top:2rem">1. Tło projektu</h5>
+					<p>Powód rozpoczęcia tego projektu był bardzo prozaiczny - brak istniejącego narzędzia które może odpowiedzieć na pytanie ile samochód ABC z rocznika X jest autentycznie wart? Jaka kwota to podejrzanie mało a jaka to zbyt dużo?
+					W pierwotnej wersji chciałem jedynie sprawdzić jak rozkładają się ceny BMW Serii 1, które mój kolega zamierzał sprzedać. Szybko zakodowałem scraping danych z konkretnego linku, wrzuciłem wszystko w dataframe'a i wygenerowałem prosty wykres po latach.</p>
+					<p>Z drugiej strony czemu nie stworzyć zbioru źródeł z których można pozyskać te dane, całość zapętlić a zamiast dataframe'u, zamieszczać wyniki w lokalnej bazie danych? W sumie nie ma powodu! Tadam, ot cała historia.</p>
+					<p>Mając zarys narzędzia nic nie stało również na przeszkodzie, żeby oprócz ceny zbierać inne dostępne dane takie jak przebieg, pojemność silnika, typ paliwa czy miasto oraz województwo z którego pochodzi dana oferta.
+					W ten sposób uzyskujemy wgląd w podstawową, ale jakże ciekawą, charakterystykę polskiego rynku samochodów. 
+					<div class="alert alert-dismissible alert-info">Polecam sprawdzić jak wraz ze wzrostem wieku samochodu spada liczba przejechanych kilometrów w skali roku - 
+					średni przebieg polskich samochodów zbliża się asymptotycznie do granicy 250 tysięcy kilometrów, jednak niestety, nie jest mu dane przełamać tej magicznej bariery ;)</div>
+					
+					<h5 style="margin-top:2rem">2. Jak czytać wykres?</h5>
+					<p>Podstawowy widok raportu przedstawia rozkład cen wybranego modelu po latach, w postaci wykresu pudełkowego <i>(ang. boxplot)</i>. Każde pudełko składa się z trzech poziomych linii: trzeciego kwartylu, mediany oraz pierwszego kwartylu.
+					Z każdego pudełka wychodzą natomiast wąsy, które oddalone są od odpowiednich kwartyli o półtora przestrzeni międzykwartylowej. Kółka znajdujące się poza tymi wąsami zwane są punktami odstającymi <i>(ang. outlier)</i> </p>
+					<p>"Hola, hola! Mediany? Kwartyle? Przestrzenie?"</p>
+					<p>Powierzchowne wytłumaczenie dla osób nietechnicznych, których nie interesuje znaczenie powżyszych terminów:</p>
+					  <ul>
+					    <li>mediana - środkowa kreska, środkowa wartość z danych, cena "średniaka" z tego roku</li>
+						<li>trzeci kwartyl - górna kreska, 75% cen jest niższych od tej wartości, cena ładnego i zadbanego egzemplarza</li>
+						<li>pierwszy kwartyl - dolna kreska, 25% cen jest niższych od tej wartości, cena stosunkowo zaniedbanego egzemlarza</li>
+						<li>wąsy - między tymi wartościami znajduje się większość wartości, pozostałe są podejrzane</li>
+						<li>punkty odstające - podejrzane ceny, auta powypadkowe, cesje leasingu, specjalne edycje itp.</li>
+					  </ul>
+					  <img style="width:100%;" src="../boxplot.png"/>
+					<h5 style="margin-top:2rem">3. Użyte narzędzia</h5>
 					<ul>
-					  <li>SQL Server - lokalna baza w celu przechowywania danych (zawiera dane z poprzednich miesięcy)</li>
+					  <li>SQL Server - lokalna baza w celu przechowywania danych (zawiera również dane z poprzednich miesięcy)</li>
 					  <li>Python - webscraping i populacja bazy danych (brak API)</li>
 					  <li>Tableau Public - stworzenie dashboard'u (wyłącznie dla ostatniego miesiąca)</li>
 					</ul>
-					<h5>4. Feedback i kontakt</h5>
+					<h5 style="margin-top:2rem">4. Feedback i kontakt</h5>
 					<p>Jeśli chcesz się dowiedzieć czegoś więcej, interesują Cię dane, znalazłeś błąd lub po prostu chcesz pogadać - pisz śmiało przy użyciu 
-					<a href="index.html#contact">formularza kontaktowego</a> lub bezpośrednio na wasilewski.gh(at)gmail.com : )</p>
+					<a href="index.html#contact">formularza kontaktowego</a> lub bezpośrednio na wasilewski.gh(at)gmail.com :)</p>
 				</div>
 			</div>
 			<div class ="col-md-2"></div>
 		</div>
+				
+		<footer class="page-footer w-100 bg-dark" style="margin-top:2rem;text-align:center;">
+		&copy; Copyright 2018 Piotr Wasilewski
+		</footer>
+		
         <!-- jQuery CDN -->
          <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
          <!-- Bootstrap Js CDN -->
