@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Piotr Wasilewski - GitHub</title>
+
+         <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="../style.css">
+		
+    </head>
+    <body>
+		
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		  <a class="navbar-brand" href="index.html">Piotr Wasilewski</a>
+		
+		<div class="collapse navbar-collapse" id="navbarColor01">  
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item">
+				<a class="nav-link" href="index.html">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="resume.html">Résumé</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link active" href="project.html">Project</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="index.html#contact">Contact</a>
+			  </li>
+			</ul>
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item">
+				<a class="nav-link" href="../pl/project.html">PL</a>
+			  </li>
+			   <li class="nav-item">
+				<a class="nav-link" href="../en/project.html">EN</a>
+			  </li>
+			</ul>
+		</div>
+		</nav>
+        <div class = "row frst justify-content-center">    
+			<div class ="col-md-2"></div>
+			<div class ="col-md-8" style="text-align: justify;">
+				<h2 style="margin-bottom:1rem">"Assemble" project</h2>
+				<p>TLDR: "Assemble" project was meant to gather the data through webscraping and visualize it. The records describe cars being sold on polish market and include 517 models made in 899 versions.
+				Monthly data refresh is planned.</p>
+				<p>A bit more detailed description of the project can be found <a href="#desc"><i>below.</i></a></p>
+				
+				<div class="alert alert-dismissible alert-warning" style="margin-bottom:1rem;">
+				  <button type="button" class="close" data-dismiss="alert">&times;</button>
+				  <h4 class="alert-heading">Attention!</h4>
+				  <p class="mb-0">Dashboard gets refreshed after you chose both Manufacturer and Model.</p>
+				</div>
+				
+				<div style="position:relative;padding-top:50%;">
+				<iframe frameborder="0" marginheight="0" marginwidth="0" title="data visualization" allowtransparency="true" allowfullscreen="false" class="tableauViz" style="display: block; position:absolute;top:0;left:0;width:100%;height:100%; margin: 0px; padding: 0px; border: none;" name="fitvid0" scrolling = "no" src="https://public.tableau.com/views/Assemble/Dashboard1?:embed=y&amp;:showVizHome=no&amp;:host_url=https%3A%2F%2Fpublic.tableau.com%2F&amp;:embed_code_version=3&amp;:tabs=no&amp;:toolbar=no&amp;:animate_transition=yes&amp;:display_static_image=no&amp;:display_spinner=no&amp;:display_overlay=yes&amp;:display_count=yes&amp;publish=yes&amp;:showShareOptions=false&amp;:loadOrderID=0"></iframe>
+				</div>
+				<p style="margin-bottom:1rem;text-align:right">Last refresh: 21.09.2018</p>
+				<hr style="margin-bottom:3rem">
+				<h2 id = "desc">Project description</h2>
+				<div>
+					<h5 style="margin-top:1rem">Contents</h5>
+					<ol>
+						<li>Background</li>
+						<li>How to read that chart?</li>
+						<li>Used tools</li>
+						<li>Feedback & contact</li>
+					</ol>
+					<h5 style="margin-top:2rem">1. Background</h5>
+					<p>The reason of starting this project was quite simple - lack of existing tool that would answer questions like: How much car ABC from year X is really worth? How much is susipiciously low and what is way too much?
+					In the initial version I wanted to check how prices of BMW 1 Series are distributed, as my friend was thinking about selling his. I've quickly coded webscraping from fixed url, thrown everything into dataframe and generated simple plot over the years.</p>
+					<p>On the other hand why not create a set of sources to scrape the data from, loop it all and store data in local db instead of using dataframe? Actually, no reason not to! Tadam, that's the whole story.</p>
+					<p>Having the outline of the tool, nothing stood against getting other data than prices - milage, engine size, fuel type, city and state that the offer comes from.
+					This way we get some insight in basic but extremely interesting characteristics of polish car market.
+					<div class="alert alert-dismissible alert-info">I strongly urge you to check how distance driven per year falls with increasing age of the car - 
+					average milage of polish cars asymptotically approaches the limit of 250 thousand kilometers, unfortunately it will never reach this magical number ;)</div>
+					
+					<h5 style="margin-top:2rem">2. How to read that chart?</h5>
+					<p>The basic dashboard view shows the distribution of prices over years, for a chosen model, as a boxplot. Each box consists of three vertical lines: third quartile, median and first quartile.
+					Whiskers come out of each box and lay 1.5 of interquartile range from each quartile.</p>
+					<p>"Wait, wait! Median? Quartile? Ranges?"</p>
+					<p>Superficial explanation for nontechnical people, that are not interested in understanding above terms:</p>
+					  <ul>
+					    <li>median - middle line, middle value, price of an average car from certain year</li>
+						<li>third quartile - upper line, price is higher than 75% of values, price of a nice and well-kept car</li>
+						<li>first quartile - lower line, price is higher than 25% of values, price of a pretty sloppy car</li>
+						<li>whiskers - most values lie between them, other may be erroneous</li>
+						<li>outliers - suspicious prices, damaged cars, leasing reassignment, special editions etc.</li>
+					  </ul>
+					  <img style="width:100%;" src="../boxplot.png"/>
+					<h5 style="margin-top:2rem">3. Used tools</h5>
+					<ul>
+					  <li>SQL Server - local db meant to store all data (including data from previous months)</li>
+					  <li>Python - webscraping and populating the database(no API used)</li>
+					  <li>Tableau Public - dashboard creation (current month only)</li>
+					</ul>
+					<h5 style="margin-top:2rem">4. Feedback & contact<</h5>
+					<p>If you want to know something more, you are interested in the data itself, found a mistake or just want to talk - be sure to reach me via
+					<a href="index.html#contact">contact form</a> or directly at wasilewski.gh(at)gmail.com :)</p>
+				</div>
+			</div>
+			<div class ="col-md-2"></div>
+		</div>
+				
+		<footer class="page-footer w-100 bg-dark" style="margin-top:2rem;text-align:center;">
+		&copy; Copyright 2018 Piotr Wasilewski
+		</footer>
+		
+        <!-- jQuery CDN -->
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="propeller" content="690a21c8f8c1a525effdb082bb770cb8">
+		
+        <title>Piotr Wasilewski - GitHub</title>
+
+         <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		  <a class="navbar-brand" href="index.html">Piotr Wasilewski</a>
+		
+		<div class="collapse navbar-collapse" id="navbarColor01">  
+			<ul class="navbar-nav mr-auto">
+			  <li class="nav-item">
+				<a class="nav-link active" href="../en/index.html">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="../en/resume.html">Résumé</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="../en/project.html">Project</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="../en/index.html#contact">Contact</a>
+			  </li>
+			</ul>
+						<ul class="navbar-nav ml-auto">
+			  <li class="nav-item">
+				<a class="nav-link" href="../pl/index.html">PL</a>
+			  </li>
+			   <li class="nav-item">
+				<a class="nav-link" href="../en/index.html">EN</a>
+			  </li>
+			</ul>
+		</div>
+		</nav>
+        <div class = "row frst justify-content-center">    
+			<div class ="col-md-2"></div>
+			<div class ="col-md-8">
+				<h2 style="margin-bottom:1rem">Let's jump right in</h2>
+				<div class="row" style="margin-left:0">
+				<div class="col-md-8" style="text-align: justify; padding-left:0; margin-bottom:1rem;">
+				<p>Hey there!
+				<p>My GitHub Pages are suppoed to showcase my 'weekend projects' that I've found fun and/or interesting.
+				For me, the initial desgin of the project feels like solving puzzles and that's why I spend most of my time on this step. I think that perfected details are far less valuable than overall idea and draft.
+				Therefore my projects are finished and functional but for sure far from impeccable.</p>
+				<p>Overall, I like to create everything myself to dig into the actual problem and tool that I am usign. Because of that I opt not to use APIs, minimize number of dependancies etc.
+				This site for example will be pretty raw, as I've never used HTML+CSS before, not mentioning JS. Even if they are not perfect, at least I know my products inside-out. :)</p>
+				<p>Another thing, everything you see here was created by me, unless stated otherwise. That's why I'd like to acknowledge <a href="https://bootswatch.com/lux/">bootswatch.com/lux/</a> 
+				being a source of CSS that I based this site on, as well as, <a href="https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server">github.com/dwyl/</a> 
+				that gave me some insight into contact form creation without established server.</p>
+				<p>Okay, enough, have fun!</p></div>
+				<div class="col-md-4" >
+				<img style="width:100%;" src="../value.png"/>
+				<p style="text-align: center">My 2-minute masterpiece!</p></div></div>
+				
+				<div class="alert alert-dismissible alert-warning" style="margin-bottom:3rem;">
+				  <button type="button" class="close" data-dismiss="alert">&times;</button>
+				  <h4 class="alert-heading">Attention!</h4>
+				  <p class="mb-0">Site is not and will not be optimized for mobile devices.</p>
+				</div>
+				
+				<h2 id = "contact" style="margin-bottom:1rem">Contact</h2>
+				<div class="contactbg">
+				 <form class="gform" method="POST" style="width:50%" action="https://script.google.com/macros/s/AKfycbx1_JavIuUpSBxEwBEGW1yIhB3XBadF2jLVnjuQr6EemiTXxzjy/exec">
+
+				 <div class="form-elements card" style="display:block;padding:1rem;">
+					<fieldset class="form-group">
+					  <label for="InputEmail">Email:</label>
+					  <input type="email" class="form-control" name="InputEmail" id="InputEmail" aria-describedby="emailHelp" value="" required placeholder="Type the email!"/>
+					  <span class="email-invalid" style="display:none">Email address is incorrect...</span>
+					  <small id="emailHelp" class="form-text text-muted">Your email will not be disclosed to anyone.</small>
+					</fieldset>
+					<fieldset class="form-group">
+					  <label for="EmailTopic">Subject:</label>
+					  <input type="topic" class="form-control" name="EmailTopic" id="EmailTopic" placeholder="Type the subject"/>
+					</fieldset>
+					 <fieldset class="form-group">
+					  <label for="Textarea">Message:</label>
+					  <textarea class="form-control" name="Textarea" id="Textarea" rows="3"></textarea>
+					</fieldset>
+					 <button type="submit" class="btn btn-primary" style="display:inline-block">Submit</button>
+					 <div class="thankyou_message" style="display:none;padding-left:1rem;">
+					  <h6>Thank you!</h6>
+					</div>
+				 </div>
+					
+				 </form></div>
+				 <p style="margin-bottom:1rem;text-align:right">Photo taken by <a href="https://web.facebook.com/FASDeptula/photos/a.253395068191093/481715928692338/?type=3&theater">Sebastian Deptuła</a>
+			</div>
+			<div class ="col-md-2"></div>
+		</div>
+		
+		<footer class="page-footer w-100 bg-dark" style="margin-top:2rem;text-align:center;">
+		&copy; Copyright 2018 Piotr Wasilewski
+		</footer>
+		
+		<!-- form JS -->
+		<script data-cfasync="false" type="text/javascript" src="../form-submission-handler.js"></script>
+        <!-- jQuery CDN -->
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
